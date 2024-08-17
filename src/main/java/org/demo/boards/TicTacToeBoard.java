@@ -2,6 +2,7 @@ package org.demo.boards;
 
 import org.demo.game.Board;
 import org.demo.game.Cell;
+import org.demo.game.Move;
 
 import java.util.Arrays;
 
@@ -17,6 +18,11 @@ public class TicTacToeBoard extends Board
     public void setCell(Cell cell, String symbol)
     {
         cells[cell.getRow()][cell.getCol()] = symbol;
+    }
+
+    public void move(Move move)
+    {
+        this.setCell(move.getCell(), move.getPlayer().symbol());
     }
 
     @Override
