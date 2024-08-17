@@ -86,7 +86,7 @@ public class GamePlayTest
         int next = 0;
         while (!ruleEngine.getState(board).isOver())
         {
-            System.out.println("Current Status::\n" + (TicTacToeBoard) board);
+            System.out.println("Current Status::\n" + board);
             System.out.println("Make Your Move");
 
             Player computer = new Player("O");
