@@ -10,4 +10,23 @@ public class GameResult
         this.isOver = isOver;
         this.winner = winner;
     }
+
+    public boolean isOver()
+    {
+        return isOver;
+    }
+
+    public String getWinner()
+    {
+        return winner;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "GameResult{" +
+                "isOver=" + isOver +
+                ", winner='" + winner + '\'' +
+                '}';
+    }
 }

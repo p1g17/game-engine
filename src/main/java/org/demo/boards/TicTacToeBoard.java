@@ -1,6 +1,9 @@
 package org.demo.boards;
 
 import org.demo.game.Board;
+import org.demo.game.Cell;
+
+import java.util.Arrays;
 
 public class TicTacToeBoard extends Board
 {
@@ -11,8 +14,24 @@ public class TicTacToeBoard extends Board
         return cells[row][col];
     }
 
-    public void setCells(int row, int col, String value)
+    public void setCell(Cell cell, String symbol)
     {
-        cells[row][col] = value;
+        cells[cell.getRow()][cell.getCol()] = symbol;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                String value = cells[i][j];
+                result.append(value != null ? value : "-");
+            }
+            result.append("\n");
+        }
+        return result.toString();
     }
 }
